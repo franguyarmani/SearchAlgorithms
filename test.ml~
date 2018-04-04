@@ -1,0 +1,47 @@
+open Printf
+  
+let file = "lesmis.gml"
+let message = "Hello"
+
+let nodes = Hashtbl.create 100
+
+
+  
+let () =
+  
+  (* Read file and display the first line *)
+  let ic = open_in file in
+  try
+    while true do
+      let line = input_line ic in  (* read line from in_channel and discard \n *)
+      if line = "  node" then begin
+          let bracket = input_line ic in
+          let id = input_line ic in
+          let label = input_line ic in
+
+          let labellen = String.length label in
+          let name = String.sub label 6 (labellen-6) in
+          Printf.printf "name %s\n" name;
+          let len = String.length id in
+          Printf.printf "id %s\n" id;
+          Printf.printf "len %i\n" len;
+          let sub = String.sub id (len-1) 1  in
+          Printf.printf "sub %s\n" sub;   
+          let num = int_of_string sub in
+          Hashtbl.add nodes num (num, String.sub label 6 (labellen-6));
+          Printf.printf "id %s\n" Hashtbl.find nodes 0;
+          print_endline "HellNO"
+        end
+    done
+      
+                               
+      with End_of_file ->
+        close_in ic;
+                   
+      
+        
+    flush stdout;                (* write on the underlying device now *)
+    close_in ic;                  (* close the input channel *) 
+    
+  
+  (* normal exit: all channels are flushed and closed *)

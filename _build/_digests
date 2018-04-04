@@ -1,0 +1,5 @@
+"Resource: /home/francispeabody/Documents/Ocaml_Assignments/test.ml": "\201\149\152\190\237 \153\151\t5\"sv^\029F"
+"Rule: ocaml dependencies ml (%=test )": "y\143q\011\005\205\131\214\201\168\201\027\165~A+"
+"Rule: ocaml: ml & cmi -> cmx & o (%=test )": "t\2529\180:g]\248i\232\164\207\027\183\206\173"
+"Rule: ocaml: ml -> cmo & cmi (%=test )": "\232\244\005\229\180\t\168\216.&\196\183\022\254\142\135"
+"Rule: ocaml: cmx* & o* -> native (%=test )": "\187Y\011z;\027\140QK\183JL\173\140v7"
